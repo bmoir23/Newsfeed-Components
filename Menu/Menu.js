@@ -49,4 +49,5 @@ function createMenuComponent(arr){
 
 
   // class names for ul 
+  menu.classList.add('menu');
 }
