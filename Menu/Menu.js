@@ -50,4 +50,20 @@ function createMenuComponent(arr){
 
   // class names for ul 
   menu.classList.add('menu');
+
+
+  // that toggle though
+
+function toggleMenu(){
+  const button = document.querySelector('.menu-button');
+  button.addEventListener('click',()=>{
+    menu.classList.toggle('menu--open')
+  })
 }
+
+toggleMenu()
+return menu
+}
+
+const header = document.querySelector('.header');
+header.appendChild(createMenuComponent(menuItems))
