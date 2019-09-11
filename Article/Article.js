@@ -137,5 +137,33 @@ function createComponent(arr){
   p_date.classList.add('date');
   span.classList.add('expandButton')
 
-  
+  // text
+
+  h2.textContent = arr.title;
+  p_date.textContent = arr.date;
+  p1.textContent = arr.firstParagraph;
+  p2.textContent = arr.secondParagraph;
+  p3.textContent = arr.thirdParagraph;
+  span.textContent = 'Expand...'
+
+
+  // that toggle though
+
+  span.addEventListener('click',() => {
+    article.classList.toggle('article-open');
+    toggleBtntext()
+  })
+
+  // change the text on button
+
+  const toggleBtntext = () => {
+    article.classList.contains('article-open')? span.textContent = 'Show Less'
+                                              : span.textContent = 'Expand...';
+  }
+
+
+  return article
 }
+
+const articles = document.querySelector('.articles')
+data.forEach(article => articles.appendChild(createComponent(article)))
